@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SettingsWindowController" customModule="SpeakingHead" customModuleProvider="target">
+            <connections>
+                <outlet property="preferenceController" destination="cPe-Nk-KWu" id="8es-Dt-DBi"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="dw4-eG-IdK"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="599" height="293"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="599" height="293"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView fixedFrame="YES" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="7kJ-Ff-vjJ">
+                        <rect key="frame" x="-1" y="0.0" width="600" height="293"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="IPA" identifier="IPATextTab" id="MbQ-ZW-b5n">
+                                <view key="view" id="gXa-Li-GJq">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="293"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <box fixedFrame="YES" title="Behavior" translatesAutoresizingMaskIntoConstraints="NO" id="pzH-Ex-rg2">
+                                            <rect key="frame" x="17" y="196" width="566" height="77"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" id="8Uw-eX-YOm">
+                                                <rect key="frame" x="2" y="2" width="562" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8u-k0-MIE">
+                                                        <rect key="frame" x="18" y="24" width="252" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Automatically open IPA symbols panel" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hxI-Hx-eLy">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.auto_ipa_popover_key" id="cG6-KO-ePB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </box>
+                                        <box fixedFrame="YES" title="Colors" translatesAutoresizingMaskIntoConstraints="NO" id="Ay7-hp-UgD">
+                                            <rect key="frame" x="17" y="16" width="566" height="176"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" id="94L-Um-tGA">
+                                                <rect key="frame" x="2" y="2" width="562" height="159"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydU-PP-ARh">
+                                                        <rect key="frame" x="158" y="120" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.text_cursor_color_key" id="7uS-3d-4wH">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pR-55-gsb">
+                                                        <rect key="frame" x="18" y="123" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Cursor" id="Sy2-GB-Dut">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z4p-uI-ZRk">
+                                                        <rect key="frame" x="158" y="85" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.text_selection_color_key" id="bGi-tK-mlT">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kZJ-QQ-yd5">
+                                                        <rect key="frame" x="18" y="88" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Text Selection" id="Giv-3e-g9i">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGe-Ne-6n1">
+                                                        <rect key="frame" x="158" y="51" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.primary_indicator_color_key" id="FNF-RH-dCV">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uA7-7D-ZaI">
+                                                        <rect key="frame" x="18" y="54" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Preparation Indicator" id="Zyp-HM-KvU">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zid-oZ-oPI">
+                                                        <rect key="frame" x="428" y="120" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.timeline_cursor_color_key" id="0Hb-tS-Dx3">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jmk-He-qn2">
+                                                        <rect key="frame" x="288" y="123" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timeline Cursor" id="Vpm-SY-IFL">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAo-NI-onL">
+                                                        <rect key="frame" x="428" y="85" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.timeline_selection_color_key" id="RnZ-aq-WYa">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wra-rS-xeR">
+                                                        <rect key="frame" x="288" y="88" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Timeline Selection" id="T1A-j0-krN">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wI-gN-Yqw">
+                                                        <rect key="frame" x="428" y="51" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.audio_color_key" id="8CH-sF-qXv">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zed-0H-3rL">
+                                                        <rect key="frame" x="288" y="54" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Audio Visualization" id="VAh-i9-Pv1">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ioM-JE-dNA">
+                                                        <rect key="frame" x="279" y="46" width="5" height="105"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    </box>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="njK-EG-qng" userLabel="Text Cursor Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="114" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8ll-IQ-IXJ">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="text_cursor_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="F3U-Rr-cDX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Lc-rr-SnG" userLabel="Timeline Cursor Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="473" y="114" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6JQ-Xs-lxQ">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="timeline_cursor_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="res-aU-cSe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lgl-61-pSF" userLabel="Text Selection Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="79" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MDV-tR-hif">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="text_selection_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="jPt-ib-Rlw"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DV2-R0-csT" userLabel="Primary Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="45" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1wT-Ch-qdQ">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="primary_indicator_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="JOH-is-Whf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-Jk-z5m" userLabel="Timeline Selection Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="473" y="79" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KrJ-Vp-yGc">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="timeline_selection_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="WQj-D2-zBq"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1VX-M7-zmW" userLabel="Audio Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="473" y="45" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3zI-RJ-IQ5">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="audio_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="SmK-wu-Gm6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oGk-JZ-tqV">
+                                                        <rect key="frame" x="304" y="9" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.symbol_highlighting_color_key" id="cUM-oq-Dpc">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jGT-nZ-1ZX">
+                                                        <rect key="frame" x="143" y="12" width="155" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="IPA Symbol Highlighting" id="qm0-7l-z2S">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q8f-zH-ENm" userLabel="IPA Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="349" y="3" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ByX-Xv-zHV">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="symbol_highlighting_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="fbv-B4-XNy"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </box>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Head" identifier="HeadTab" id="gjw-Ae-UaW">
+                                <view key="view" ambiguous="YES" id="ypf-rC-bJc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="293"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <box fixedFrame="YES" title="Lighting" translatesAutoresizingMaskIntoConstraints="NO" id="uid-E7-HhS">
+                                            <rect key="frame" x="17" y="210" width="566" height="83"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" id="k1G-Lo-Zgy">
+                                                <rect key="frame" x="2" y="2" width="562" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wuu-LR-UX5">
+                                                        <rect key="frame" x="52" y="28" width="41" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bright" id="1VU-dd-SJX">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKB-Pm-LHe">
+                                                        <rect key="frame" x="103" y="24" width="362" height="24"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <sliderCell key="cell" state="on" alignment="left" maxValue="1" doubleValue="0.50203284438775508" tickMarkPosition="below" numberOfTickMarks="11" sliderType="linear" id="3xS-TE-J5b"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.lighting_slider_key" id="h7a-QR-vA0"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4z-rR-Z93">
+                                                        <rect key="frame" x="478" y="28" width="33" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dark" id="vfU-LQ-aPT">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </subviews>
+                                            </view>
+                                        </box>
+                                        <box fixedFrame="YES" title="Colors" translatesAutoresizingMaskIntoConstraints="NO" id="wQB-5n-MRF">
+                                            <rect key="frame" x="17" y="16" width="566" height="190"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <view key="contentView" id="W04-au-YnT">
+                                                <rect key="frame" x="2" y="2" width="562" height="173"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vm9-SO-NNp">
+                                                        <rect key="frame" x="18" y="93" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Hair" id="L8i-kN-QFU">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XCY-bO-itr">
+                                                        <rect key="frame" x="18" y="130" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Flesh" id="7y9-YJ-KFd">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="51m-f9-zN5">
+                                                        <rect key="frame" x="18" y="24" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Slice Indicator" id="2mV-hu-nMq">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mU-e7-gs5">
+                                                        <rect key="frame" x="158" y="89" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.hair_color_key" id="jet-Tc-NbR">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-sJ-AZR">
+                                                        <rect key="frame" x="158" y="20" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.slice_indicator_color_key" id="6KQ-DO-jDO">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zeq-el-oBl">
+                                                        <rect key="frame" x="424" y="89" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.teeth_color_key" id="dVg-ep-ALI">
+                                                                <dictionary key="options">
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WiU-mX-0vK">
+                                                        <rect key="frame" x="424" y="56" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.brian_color_key" id="nlE-GZ-PTM">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIi-A2-PjZ">
+                                                        <rect key="frame" x="158" y="126" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.flesh_color_key" id="Ypl-d6-vcR">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="pLT-iQ-TIT">
+                                                        <rect key="frame" x="279" y="12" width="5" height="149"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    </box>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CTk-jF-grw" userLabel="Bones Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="473" y="121" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dvd-04-06o">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="bone_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="D0f-DF-EQr"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rez-VC-c3C" userLabel="Teeth Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="473" y="83" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yXO-gD-nx4">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="teeth_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="eeA-Qh-dg0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="97O-MO-opG" userLabel="Brian Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="473" y="50" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Er2-W5-h7a">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="brian_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="7Bd-KC-4zj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4r-zC-GqS" userLabel="Slice Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="14" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="BTZ-Si-itO">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="slice_indicator_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="eF1-lg-YQo"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAZ-nt-tPK" userLabel="Hair Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="83" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KEc-9s-02n">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="hair_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="j5m-Ax-N9g"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eu-w1-Acb" userLabel="Flesh Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="120" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="YkD-G6-q5P">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="flesh_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="iLX-9N-cOi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXW-ih-KqP">
+                                                        <rect key="frame" x="288" y="131" width="130" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Bones" id="79u-pX-F9o">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uto-9g-10a">
+                                                        <rect key="frame" x="290" y="94" width="128" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Teeth" id="1tO-6D-oBd">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgI-Jt-IPy">
+                                                        <rect key="frame" x="288" y="59" width="130" height="18"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="check" title="Brian" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="r8f-JM-EfW">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.brian_visible_key" id="YN8-Iz-eh7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-CO-Kdz">
+                                                        <rect key="frame" x="424" y="126" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.bone_color_key" id="PQU-CI-AQt">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaj-Q1-SxQ">
+                                                        <rect key="frame" x="18" y="59" width="134" height="17"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Eyes" id="778-Tt-hzd">
+                                                            <font key="font" metaFont="system"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IuC-7Z-IVP">
+                                                        <rect key="frame" x="158" y="55" width="44" height="23"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <connections>
+                                                            <binding destination="DVj-Pw-fO9" name="value" keyPath="values.eye_color_key" id="uyx-Je-9Zp">
+                                                                <dictionary key="options">
+                                                                    <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                                                    <string key="NSValueTransformerName">NSUnarchiveFromData</string>
+                                                                </dictionary>
+                                                            </binding>
+                                                        </connections>
+                                                    </colorWell>
+                                                    <button toolTip="Reset to default color" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmk-dT-n0u" userLabel="Slice Reset" customClass="PreferenceResetButton" customModule="SpeakingHead" customModuleProvider="target">
+                                                        <rect key="frame" x="204" y="49" width="75" height="32"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lDX-kQ-hml">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultKey" value="eye_color_key"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="resetPreferenceValue:" target="-2" id="Eki-4L-FN4"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </view>
+                                        </box>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="4402A5CE-5031-4245-9EC3-EA13510E37F8" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="regular" id="p7y-qb-IBl">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="849DB40B-6004-4161-9636-136EC58F250E" explicitItemIdentifier="IPATextTab" label="IPA Text" paletteLabel="IPA Text" tag="-1" image="text" selectable="YES" id="0Yl-FX-SJm">
+                        <connections>
+                            <action selector="onTab:" target="cPe-Nk-KWu" id="pqT-iV-3OL"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="646D03E0-3445-4692-8B51-A20EE81102F7" explicitItemIdentifier="AnimationTab" label="Animation" paletteLabel="Animation" tag="-1" image="NSBonjour" selectable="YES" id="sSM-ge-UHj">
+                        <connections>
+                            <action selector="onTab:" target="cPe-Nk-KWu" id="Kfl-WP-p9x"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C92B3BA8-C295-4F60-A27F-19064E0B70BF" explicitItemIdentifier="HeadTab" label="Head" paletteLabel="Head" tag="-1" image="head" selectable="YES" id="6Nf-l1-jJ6">
+                        <connections>
+                            <action selector="onTab:" target="cPe-Nk-KWu" id="gYd-HF-eXh"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="22554F78-6035-4B37-9DCD-66CB43FF0269" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" id="DoW-Y7-cC3"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Zms-vZ-F9E"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="pKq-jh-1gB"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="0Yl-FX-SJm"/>
+                    <toolbarItem reference="6Nf-l1-jJ6"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <point key="canvasLocation" x="-1352.5" y="162.5"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="DVj-Pw-fO9"/>
+        <viewController id="cPe-Nk-KWu" userLabel="Prefernces Controller" customClass="PreferenceController" customModule="SpeakingHead" customModuleProvider="target">
+            <connections>
+                <outlet property="tabView" destination="7kJ-Ff-vjJ" id="clW-6E-ZrS"/>
+                <outlet property="toolBar" destination="p7y-qb-IBl" id="ssm-vL-Gyg"/>
+                <outlet property="view" destination="EiT-Mj-1SZ" id="6dd-MS-pRB"/>
+            </connections>
+        </viewController>
+    </objects>
+    <resources>
+        <image name="NSBonjour" width="32" height="32"/>
+        <image name="head" width="32" height="32"/>
+        <image name="text" width="32" height="32"/>
+    </resources>
+</document>

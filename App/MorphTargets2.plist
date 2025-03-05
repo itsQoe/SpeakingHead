@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Head</key>
+	<dict>
+		<key>mouth-open</key>
+		<string>art.scnassets/MouthOpen.dae</string>
+		<key>lips-open</key>
+		<string>art.scnassets/LipsOpen.dae</string>
+		<key>lips-round</key>
+		<string>art.scnassets/LipsRound.dae</string>
+		<key>lips-smile</key>
+		<string>art.scnassets/LipsSmile.dae</string>
+		<key>lips-upper</key>
+		<string>art.scnassets/LipsUpper.dae</string>
+		<key>lips-press</key>
+		<string>art.scnassets/LipsPress.dae</string>
+		<key>labiodental</key>
+		<string>art.scnassets/Labiodental.dae</string>
+		<key>labiodental-up</key>
+		<string>art.scnassets/LabiodentalUp.dae</string>
+		<key>tongue-open</key>
+		<string>art.scnassets/TongueOpen.dae</string>
+		<key>tongue-front-open</key>
+		<string>art.scnassets/TongueFrontOpen.dae</string>
+		<key>tongue-tip-open</key>
+		<string>art.scnassets/TongueTipOpen.dae</string>
+		<key>tongue-furrow</key>
+		<string>art.scnassets/TongueFurrow.dae</string>
+		<key>tongue-lateral</key>
+		<string>art.scnassets/TongueLateral.dae</string>
+		<key>tongue-broughten</key>
+		<string>art.scnassets/TongueBroughten.dae</string>
+		<key>tongue-forward</key>
+		<string>art.scnassets/TongueForward.dae</string>
+		<key>tongue-back</key>
+		<string>art.scnassets/TongueBack.dae</string>
+		<key>tongue-concave</key>
+		<string>art.scnassets/TongueConcave.dae</string>
+		<key>tongue-root-down</key>
+		<string>art.scnassets/TongueRootDown.dae</string>
+		<key>tongue-root-up</key>
+		<string>art.scnassets/TongueRootUp.dae</string>
+		<key>tongue-root-forward</key>
+		<string>art.scnassets/TongueRootForward.dae</string>
+		<key>tongue-root-back</key>
+		<string>art.scnassets/TongueRootBack.dae</string>
+		<key>tongue-retroflex</key>
+		<string>art.scnassets/TongueRetroflex.dae</string>
+		<key>nasal-close</key>
+		<string>art.scnassets/NasalClose.dae</string>
+		<key>vocal-close</key>
+		<string>art.scnassets/VocalClose.dae</string>
+	</dict>
+</dict>
+</plist>

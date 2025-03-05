@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mouth-open</key>
+	<real>0.1</real>
+	<key>jaw-open</key>
+	<real>0.1</real>
+	<key>lips-open</key>
+	<real>0.1</real>
+	<key>lips-round</key>
+	<real>0.1</real>
+	<key>lips-smile</key>
+	<real>0.1</real>
+	<key>lips-upper</key>
+	<real>0.1</real>
+	<key>lips-press</key>
+	<real>0.03</real>
+	<key>labiodental</key>
+	<real>0.1</real>
+	<key>labiodental-up</key>
+	<real>0.1</real>
+	<key>tongue-open</key>
+	<real>0.1</real>
+	<key>tongue-front-open</key>
+	<real>0.1</real>
+	<key>tongue-tip-open</key>
+	<real>0.1</real>
+	<key>tongue-furrow</key>
+	<real>0.1</real>
+	<key>tongue-lateral</key>
+	<real>0.1</real>
+	<key>tongue-broughten</key>
+	<real>0.1</real>
+	<key>tongue-retroflex</key>
+	<real>0.1</real>
+	<key>tongue-forward</key>
+	<real>0.1</real>
+	<key>tongue-back</key>
+	<real>0.1</real>
+	<key>tongue-concave</key>
+	<real>0.1</real>
+	<key>tongue-root-down</key>
+	<real>0.1</real>
+	<key>tongue-root-up</key>
+	<real>0.1</real>
+	<key>tongue-root-forward</key>
+	<real>0.1</real>
+	<key>tongue-root-back</key>
+	<real>0.1</real>
+	<key>nasal-close</key>
+	<real>0.1</real>
+	<key>vocal-close</key>
+	<real>0.1</real>
+</dict>
+</plist>
